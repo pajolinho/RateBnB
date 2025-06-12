@@ -5,7 +5,7 @@ nav_order: 4
 ---
 
 {: .label }
-[Jane Dane]
+[RateBnB]
 
 {: .no_toc }
 # Summary of individual contributions
@@ -17,16 +17,13 @@ nav_order: 4
 {: toc }
 </details>
 
-## [Jane Dane]
+## Paul Grüßing
+
+Contributions:
+: Spielprinzip step by step implementieren
+: Simpler Zufallsgenerator um Website am Anfang zu simulieren
+
+## Merdan Alkas
 
 Contributions
-: Lorem ipsum dolor
-: Consetetur sadipscing elitr
-: ...
-
-## [Joe Doe]
-
-Contributions
-: Diam nonumy eirmod
-: Tempor invidunt ut labore
-: ...
+: Datenbankanbindung
