@@ -3,26 +3,23 @@ title: Home
 nav_order: 0
 ---
 
-{: .attention }
-> Any text enclosed by `[ ]` are placeholders, including the opening and closing brackets.
->
-> You may delete this `attention` box.
+# RateBnB
 
-# [Project Name]
-
-[Project description]
+Eine Website die Ihr AirBnB Erlebnis auf die nächste Stufe hebt. Mit RateBnB wird die Unterkunftssuche zu einem Spiel. Können Sie den Highscore knacken?
 
 ## Team members
 
-### [Jane Dane]
+### Paul Grüßing
 
 About
-: Some info about Jane
+: Wirtschaftsinformatiker an der HWR im siebten Semester, sowie Student an der Programmierschule 42Berlin
+
+Erfahrung in C, C++ und Java
 
 Matr.-Nr.
-: 1234567
+: 77211932740
 
-### [Joe Doe]
+### Merdan Alkas
 
 About
 : Some info about Joe
