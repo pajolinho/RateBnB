@@ -19,6 +19,7 @@ nav_order: 1
 ## The problem
 
 Spontanurlauber und unentschlossene Reisende wissen oft nicht, wohin sie als Nächstes reisen sollen. Viele Buchungsplattformen bieten eine reine Suchfunktion, setzen aber bereits konkrete Reiseziel oder Filtereingaben voraus. Dadurch bleiben potenzielle, spannende Reiseziele vor allem in unbekannteren Gegenden oft unentdeckt. Gleichzeitig fehlt vielen Nutzern eine unterhaltsame, spielerische Möglichkeit, neue Reiseideen zu entdecken.
+Zudem ist der Preisvergleich schwer durchschaubar: Service -und Reinigungsgebühren, schwankende Preise nach Mikrolage.
 
 ## Our solution
 
@@ -41,3 +42,4 @@ Die Datenbank wird manuell gepflegt, um eine hohe Qualität zu gewährleisten au
 - Förderung von Spontanreisen.
 - Fokus auf Inspiration statt konkreter Filter.
 - Individuelle Favoritenliste als Ergebnis persönlicher Vorlieben.
+

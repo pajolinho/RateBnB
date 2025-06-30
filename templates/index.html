@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>RateBnB</title>
+    <meta charset="UTF-8">
+    <title>RateBnB</title>
 </head>
 <body>
-  <h1>Score: {{ score }}</h1>
-  <h2>Spielregeln</h2>
-  <p>
-    Errate richtig oder falsch. Allein der Zufall entscheidet, ob du richtig lagst.
-  </p>
-  <p>Klicke <strong>Richtig</strong> oder <strong>Falsch</strong>!</p>
-  <form method="post">
-    <input type="hidden" name="expected" value="{{ expected }}">
-    <input type="hidden" name="score" value="{{ score }}">
-    <button name="answer" value="richtig" type="submit">Richtig</button>
-    <button name="answer" value="falsch" type="submit">Falsch</button>
-  </form>
+    <h1>RateBnB</h1>
+    <p>Aktueller Score: <strong>{{ score }}</strong></p>
+
+    <form method="POST">
+        <div>
+            <h3>Airbnb1: {{ listing1.title }} ({{ listing1.city }})</h3>
+            <p>Preis: ?</p>
+        </div>
+
+        <div>
+            <h3>Airbnb2: {{ listing2.title }} ({{ listing2.city }})</h3>
+            <p>Preis: ?</p>
+        </div>
+        <input type="hidden" name="score" value="{{ score }}">
+        <input type="hidden" name="expected" value="{{ expected }}">
+
+        <p>
+            <button type="submit" name="answer" value="oneExpensive">Airbnb1 ist teurer</button>
+            <button type="submit" name="answer" value="twoExpensive">Airbnb2 ist teurer</button>
+        </p>
+    </form>
 </body>
 </html>

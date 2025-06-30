@@ -28,7 +28,6 @@ Updated
 
 ### Problem statement
 
-[Describe the problem to be solved or the goal to be achieved. Include relevant context information.]
 
 ### Decision
 

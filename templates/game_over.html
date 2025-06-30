@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Game Over</title>
+    <meta charset="UTF-8">
+    <title>Spiel vorbei</title>
 </head>
 <body>
-  <h1>Game Over!</h1>
-  <p>Dein Endstand: {{ final_score }}</p>
-  <a href="{{ url_for('index') }}">Neues Spiel starten</a>
+    <h1>Spielregeln</h1>
+    <p>Errate die günstige Unterkunft auf Airbnb. Wie hoch kannst du den Highscore treiben?</p>
+    <p>Klicke <strong>Listing 2 ist teurer</strong> oder <strong>Listing 2 ist günstiger</strong>!</p>
+
+    <hr>
+
+    <h2>Spiel vorbei!</h2>
+    <p>Dein Endstand: <strong>{{ final_score }}</strong></p>
+    <p><a href="{{ url_for('index') }}">Nochmal spielen</a></p>
 </body>
 </html>
