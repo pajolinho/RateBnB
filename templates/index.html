@@ -3,28 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>RateBnB</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
+
 </head>
 <body>
-    <h1>RateBnB</h1>
-    <p>Aktueller Score: <strong>{{ score }}</strong></p>
+    <div class="cntr">
+        <h1>RateBnB</h1>
+        <p>Aktueller Score: <strong>{{ score }}</strong></p>
+    </div>
+
 
     <form method="POST">
-        <div>
-            <h3>Airbnb1: {{ listing1.title }} ({{ listing1.city }})</h3>
-            <p>Preis: ?</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 cntr">
+                    <h3>Airbnb1: {{ listing1.title }}</h3>
+                    <img src="{{ listing1.image_url }}" class="outlineimg bnb-bild rounded mx-auto d-block">
+                    <!-- <p>Preis: ?</p> -->
+                     <div class="row">
+                        <div class="col-md-6"> <p>Anzahl Betten: {{ listing1.beds }}</p></div>
+                        <div class="col-md-6"> <p>Anzahl Zimmer: {{ listing1.rooms }}</p></div>
+                     </div>
+                     <button class="btn btn-lg" type="submit" name="answer" value="oneExpensive">Airbnb1 ist teurer</button>
+                </div>
+                <div class="col-md-6 cntr">
+                    <h3>Airbnb2: {{ listing2.title }}</h3>
+                    <img src="{{ listing2.image_url }}" class="outlineimg bnb-bild rounded mx-auto d-block">
+                                         <div class="row">
+                        <div class="col-md-6"> <p>Anzahl Betten: {{ listing2.beds }}</p></div>
+                        <div class="col-md-6"> <p>Anzahl Zimmer: {{ listing2.rooms }}</p></div>
+                     </div>
+                    <!-- <p>Preis: ?</p> -->
+                    <button class="btn btn-lg" type="submit" name="answer" value="twoExpensive">Airbnb2 ist teurer</button>
+                </div>
+            </div>
         </div>
+        
 
-        <div>
-            <h3>Airbnb2: {{ listing2.title }} ({{ listing2.city }})</h3>
-            <p>Preis: ?</p>
-        </div>
+
         <input type="hidden" name="score" value="{{ score }}">
         <input type="hidden" name="expected" value="{{ expected }}">
 
-        <p>
-            <button type="submit" name="answer" value="oneExpensive">Airbnb1 ist teurer</button>
-            <button type="submit" name="answer" value="twoExpensive">Airbnb2 ist teurer</button>
-        </p>
+        <!-- <p>
+            <button class="btn btn-lg" type="submit" name="answer" value="oneExpensive">Airbnb1 ist teurer</button>
+            <button class="btn btn-lg" type="submit" name="answer" value="twoExpensive">Airbnb2 ist teurer</button>
+        </p> -->
     </form>
 </body>
 </html>

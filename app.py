@@ -39,8 +39,9 @@ def index():
             return render_template("game_over.html", final_score=score)
     if request.method == "GET":
         score = int(request.args.get("score", 0))
-        bnb1, bnb2 = random.sample(bnbs, 2)
-        if bnb1["price"] > bnb2["price"]:
+        bnb_list = Bnb.query.all()
+        bnb1, bnb2 = random.sample(bnb_list, 2)
+        if bnb1.price_per_night > bnb2.price_per_night:
             expected = "oneExpensive"
         else:
             expected = "twoExpensive"
