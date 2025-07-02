@@ -11,10 +11,12 @@ db = SQLAlchemy(app)
 class Bnb (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.String(150), nullable=False)
+    title = db.Column(db.String(600), nullable=False)
     location = db.Column(db.String(150), nullable=False)
     beds = db.Column(db.Integer, nullable=False)
     rooms = db.Column(db.Integer, nullable=True)
-    prive_per_night = db.Column(db.Integer, nullable=False)
+    price_per_night = db.Column(db.Integer, nullable=False)
+    link = db.Column(db.String, nullable=False)
 
 @app.route("/")
 def index():
