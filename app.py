@@ -25,8 +25,16 @@ class Bnb (db.Model):
     price_per_night = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String, nullable=False)
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
 def index():
+    return render_template("index.html")
+
+@app.route("/aboutus", methods=["GET"])
+def aboutus():
+    return render_template("aboutus.html")
+
+@app.route("/game", methods=["GET", "POST"])
+def start():
     if request.method == "POST":
         score = int(request.form.get("score", 0))
         expected = request.form.get("expected")
@@ -34,7 +42,7 @@ def index():
 
         if user == expected:
             score += 1
-            return redirect(url_for("index", score=score))
+            return redirect(url_for("start", score=score))
         else:
             return render_template("game_over.html", final_score=score)
     if request.method == "GET":
@@ -46,9 +54,9 @@ def index():
         else:
             expected = "twoExpensive"
 
-        return render_template("index.html", score=score, listing1=bnb1, listing2=bnb2, expected=expected)
+        return render_template("game.html", score=score, listing1=bnb1, listing2=bnb2, expected=expected)
 
-if __name__ == "__main__":
+if __name__ == "__main__":     
     #Datenbank speichern falls im app context ausgeführt wird
     with app.app_context():
         db.create_all()
