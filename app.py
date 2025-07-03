@@ -33,6 +33,7 @@ def index():
 def aboutus():
     return render_template("aboutus.html")
 
+# [Q3]
 @app.route("/game", methods=["GET", "POST"])
 def start():
     if request.method == "POST":
