@@ -25,6 +25,7 @@ class Bnb (db.Model):
     price_per_night = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String, nullable=False)
 
+# [Q3]
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
