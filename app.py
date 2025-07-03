@@ -14,7 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-#Table erstellen
 class Bnb (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.String(150), nullable=False)
@@ -48,8 +47,9 @@ def start():
             return render_template("game_over.html", final_score=score)
     if request.method == "GET":
         score = int(request.args.get("score", 0))
-        bnb_list = Bnb.query.all()
-        bnb1, bnb2 = random.sample(bnb_list, 2)
+        # bnb_list = Bnb.query.all()
+        # bnb1, bnb2 = random.sample(bnb_list, 2)
+        bnb1, bnb2 = random.sample(Bnb.query.all(), 2)
         if bnb1.price_per_night > bnb2.price_per_night:
             expected = "oneExpensive"
         else:
