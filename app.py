@@ -24,9 +24,23 @@ class Bnb (db.Model):
     price_per_night = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String, nullable=False)
 
+
+# Noch in Bearbeitung!!!
+# class User (db.Model):
+    # id = db.Column(db.Integer, primary_key=True)
+    # firstname = db.Column(db.String(250), nullable=False)
+    # name = db.Column(db.String(250), nullable=False)
+
+# class Favs (db.Model):
+#     id = db.Column(db.Integer, primary_key=True)
+#     user_id = db(Integer, nullable=Flase)
+#     bnb_id = db.(Integer, nullable=False)
+
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
+
+@app.route("/login")
 
 @app.route("/aboutus", methods=["GET"])
 def aboutus():
