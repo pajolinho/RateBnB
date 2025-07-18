@@ -1,6 +1,7 @@
 from app import db, Bnb, app
 
 with app.app_context():
+    db.create_all()
     entries = [
         Bnb(
             image_url="https://a0.muscache.com/im/pictures/hosting/Hosting-1448392717596005579/original/2d859c0c-c2d6-4527-b327-5a2602114524.jpeg?im_w=1200",

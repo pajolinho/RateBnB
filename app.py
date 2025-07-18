@@ -54,11 +54,17 @@ def start():
         expected = request.form.get("expected")
         user = request.form.get("answer")
 
+        #Q5 
+        id1 = int(request.form.get("id1"))
+        id2 = int(request.form.get("id2"))
+        bnb1 = Bnb.query.get(id1)
+        bnb2 = Bnb.query.get(id2)
+        
         if user == expected:
             score += 1
-            return redirect(url_for("start", score=score))
+            return render_template("game_over.html", final_score=score, listing1=bnb1, listing2=bnb2, correct=True)
         else:
-            return render_template("game_over.html", final_score=score)
+            return render_template("game_over.html", final_score=score, listing1=bnb1, listing2=bnb2, correct=False)
     if request.method == "GET":
         score = int(request.args.get("score", 0))
         # bnb_list = Bnb.query.all()
