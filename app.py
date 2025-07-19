@@ -25,12 +25,10 @@ class Bnb (db.Model):
     link = db.Column(db.String, nullable=False)
 
 
-# Noch in Bearbeitung!!!
-# class User (db.Model):
-    # id = db.Column(db.Integer, primary_key=True)
-    # firstname = db.Column(db.String(250), nullable=False)
-    # name = db.Column(db.String(250), nullable=False)
-    # 
+class User (db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(250), nullable=False)
+    password = db.Column(db.String(250), nullable=False)
 
 # class Favs (db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
@@ -41,7 +39,23 @@ class Bnb (db.Model):
 def index():
     return render_template("index.html")
 
-@app.route("/login")
+# [Q: https://www.youtube.com/watch?v=a1Ykeqj_D_M / und / untere Route]
+@app.route("/registrieren", ethods=["GET", "POST"])
+def registrieren():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["passwort"]
+
+        if User.query.filter_by(username=username).first():
+            return "Username ist bereits vergeben! "
+        
+        anmelder = User(username=username, password=password)
+        db.session.add(anmelder)
+        db.session.commit()
+
+        # return redirect(url_for(noch nicht vergeben))
+    
+    return render_template("registrieren.html")
 
 @app.route("/aboutus", methods=["GET"])
 def aboutus():
