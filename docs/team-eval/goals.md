@@ -16,3 +16,11 @@ nav_order: 1
 + ToC
 {: toc }
 </details>
+
+## Paul
+Zu lernen wie große Programmierprojekte in einem kleinen Team durchgeführt und geplant werden können.
+
+Außerdem eine hohe Programmiersprache wie Python zu erlenen. Fühle mich bisher nur in C wirklich zuhause.
+Auch der Umgang mit einem Code editor wie VS Code war interessant. Bissher habe ich git nur übers terminal bedient und die files mit vim geschrieben.
+
+## Merdan
