@@ -30,6 +30,7 @@ class Bnb (db.Model):
     # id = db.Column(db.Integer, primary_key=True)
     # firstname = db.Column(db.String(250), nullable=False)
     # name = db.Column(db.String(250), nullable=False)
+    # 
 
 # class Favs (db.Model):
 #     id = db.Column(db.Integer, primary_key=True)
