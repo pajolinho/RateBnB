@@ -5,17 +5,10 @@ nav_order: 3
 ---
 
 {: .label }
-[Jane Dane]
+Merdan, Paul
 
 {: .no_toc }
 # Reference documentation
-
-{: .attention }
-> This page collects internal functions, routes with their functions, and APIs (if any).
-> 
-> See [Uber](https://developer.uber.com/docs/drivers/references/api) or [PayPal](https://developer.paypal.com/api/rest/) for exemplary high-quality API reference documentation.
->
-> You may delete this `attention` box.
 
 <details open markdown="block">
 {: .text-delta }
@@ -26,13 +19,13 @@ nav_order: 3
 
 ## [Section / module]
 
-### `function_definition()`
+### `index()`
 
-**Route:** `/route/`
+**Route:** `/`
 
-**Methods:** `POST` `GET` `PATCH` `PUT` `DELETE`
+**Methods:** `GET`
 
-**Purpose:** [Short explanation of what the function does and why]
+**Purpose:** Einstieg in die Anwendung, von dort kann der User das Spiel starten oder etwas über das Entwickler Team erfahren
 
 **Sample output:**
 
