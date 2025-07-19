@@ -1,5 +1,7 @@
 
 <!-- [Q1] -->
+<!-- [Q2] -->
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -14,10 +16,26 @@
     <p>Klicke <strong>Listing 2 ist teurer</strong> oder <strong>Listing 2 ist günstiger</strong>!</p>
 
     <hr>
+    <!-- [Q4] -->
+    <h2>
+        {% if correct==True %}
+            Richtig geraten!
+        {% else %}
+            Spiel vorbei!
+        {% endif %}
+    </h2>
 
-    <h2>Spiel vorbei!</h2>
-    <p>Dein Endstand: <strong>{{ final_score }}</strong></p>
-    <!-- [Q2] -->
-    <button class="btn btn-lg btn-success"><a href="{{ url_for('index') }}" class="whitelink">Nochmal spielen</a></button>
+    <p>Dein Score: <strong>{{ final_score }}</strong></p>
+    <h3> Airbnb Preise dieser Runde: </h3>
+    <p>{{ listing1.title }} : {{ listing1.price_per_night }}€ pro nacht</p>
+    <p>{{ listing2.title }} : {{ listing2.price_per_night }}€ pro nacht</p>
+    {% if correct %}
+        <form method="GET" action="{{ url_for('start') }}">
+            <input type="hidden" name="score" value="{{ final_score }}">
+            <button type="submit" class="btn btn-success btn-lg">Nächste Runde</button>
+        </form>
+    {% else %}
+        <a href="{{ url_for('index') }}" class="btn btn-danger btn-lg">Nochmal spielen</a>
+    {% endif %}
 </body>
 </html>
