@@ -1,5 +1,5 @@
 import random
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 
 # #prototype
@@ -10,11 +10,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 # DAtenbank Konfi
+app.secret_key = "blabla"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class Bnb (db.Model):
+class Bnb(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.String(150), nullable=False)
     title = db.Column(db.String(600), nullable=False)
@@ -25,9 +26,9 @@ class Bnb (db.Model):
     link = db.Column(db.String, nullable=False)
 
 
-class User (db.Model):
+class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(250), nullable=False)
+    username = db.Column(db.String(250), unique=True, nullable=False)
     password = db.Column(db.String(250), nullable=False)
 
 # class Favs (db.Model):
@@ -37,29 +38,60 @@ class User (db.Model):
 
 @app.route("/", methods=["GET"])
 def index():
-    return render_template("index.html")
+    user_id = session.get('user_id')
+    if user_id:
+        user = User.query.get(user_id)
+        return render_template("index.html", user=user)
+    else:
+        return redirect(url_for('anmelden'))
+    # return render_template("index.html")
 
-# [Q: https://www.youtube.com/watch?v=a1Ykeqj_D_M / und / untere Route]
-@app.route("/registrieren", ethods=["GET", "POST"])
+
+# [Q: https://www.youtube.com/watch?v=a1Ykeqj_D_M / und untere Route]
+@app.route("/registrieren", methods=["GET", "POST"])
 def registrieren():
     if request.method == "POST":
-        username = request.form["username"]
-        password = request.form["passwort"]
+        username = request.form.get("username")
+        password = request.form.get("password")
 
         if User.query.filter_by(username=username).first():
             return "Username ist bereits vergeben! "
-        
+
         anmelder = User(username=username, password=password)
         db.session.add(anmelder)
         db.session.commit()
 
+        return redirect(url_for("anmelden"))
         # return redirect(url_for(noch nicht vergeben))
-    
+
     return render_template("registrieren.html")
+
+
+@app.route("/anmelden", methods=["GET", "POST"])
+def anmelden():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+
+        user = User.query.filter_by(username=username, password=password).first()
+
+        if user:
+            session["user_id"] = user.id
+            return redirect(url_for("index"))
+        else:
+            return "Username oder Passwort flasch"
+
+    return render_template("anmelden.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect(url_for("login"))
 
 @app.route("/aboutus", methods=["GET"])
 def aboutus():
     return render_template("aboutus.html")
+
 
 # [Q3]
 @app.route("/game", methods=["GET", "POST"])
@@ -74,12 +106,13 @@ def start():
         id2 = int(request.form.get("id2"))
         bnb1 = Bnb.query.get(id1)
         bnb2 = Bnb.query.get(id2)
-        
+
         if user == expected:
             score += 1
             return render_template("game_over.html", final_score=score, listing1=bnb1, listing2=bnb2, correct=True)
         else:
             return render_template("game_over.html", final_score=score, listing1=bnb1, listing2=bnb2, correct=False)
+
     if request.method == "GET":
         score = int(request.args.get("score", 0))
         # bnb_list = Bnb.query.all()
@@ -92,7 +125,8 @@ def start():
 
         return render_template("game.html", score=score, listing1=bnb1, listing2=bnb2, expected=expected)
 
-if __name__ == "__main__":     
+
+if __name__ == "__main__":
     #Datenbank speichern falls im app context ausgeführt wird
     with app.app_context():
         db.create_all()

@@ -2,26 +2,25 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Registrieren</title>
+    <title>Anmelden</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <!-- [Q: https://getbootstrap.com/docs/4.1/components/forms/] -->
-<h2>Registrieren</h2>
+<h2>Anmelden</h2>
 <form method="post">
   <div class="form-group">
     <label for="usernames">Username: </label>
     <input type="text" name="username" class="form-control" placeholder="Mustermann" required>
-    <small class="form-text text-muted">Bitte merken Sie sich Ihren Usernamen dieser wird für zukünfitge Anmeldungen benötigt!.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" name="password" class="form-control" placeholder="Passwort" required>
   </div>
 <p class="text-center mt-3">
-    <a href="{{ url_for('anmelden') }}">Zum Login</a>
+    <a href="{{ url_for('registrieren') }}">Noch kein Account?</a>
 </p>
-  <button type="submit" class="btn btn-success">Registrieren</button>
+  <button type="submit" class="btn btn-success">Anmelden</button>
 </form>
 </html>
