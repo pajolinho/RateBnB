@@ -27,17 +27,17 @@ nav_order: 1
 + Favoritenliste der Airbnbs je Benutzer
 
 ## Codemap
-|**Datei**| **Beschreibung**|
-|-------------|-----------------------------------------------------|
-|app.py| Hauptlogik: enthält alle Routen, Datenbankmodelle und den Spielflow|
-|data_to_db.py| Füllt Airbnbs Daten in die Datenbank|
-|db.db| Datenbank für Nutzer, Unterkünfte und Favoriten|
-|index.html| Startseite mit Spielanleitung und navigations Möglichkeiten|
-|game.html|zeigt zwei zufällige Unterkunfte zum Preisraten|
-|game_over.html| Bewertet und zeigt das Ergebnis der letzten Spielrunde|
-|favorites.html| zeigt gespeicherte Favoriten des jewiligen Nutzers|
-|anmelden.html & registrieren.html| Login oder neue Registrierung des aktuellen Nutzers|
-|aboutus.html| Vorstellung des Entwicklerteams|
+|**Datei**                          | **Beschreibung**                                                      |
+|-----------------------------------|-----------------------------------------------------------------------|
+|app.py                             | Hauptlogik: enthält alle Routen, Datenbankmodelle und den Spielflow   |
+|data_to_db.py                      | Füllt Airbnbs Daten in die Datenbank                                  |
+|db.db                              | Datenbank für Nutzer, Unterkünfte und Favoriten                       |
+|index.html                         | Startseite mit Spielanleitung und navigations Möglichkeiten           |
+|game.html                          |zeigt zwei zufällige Unterkunfte zum Preisraten                        |
+|game_over.html                     | Bewertet und zeigt das Ergebnis der letzten Spielrunde                |
+|favorites.html                     | zeigt gespeicherte Favoriten des jewiligen Nutzers                    |
+|anmelden.html & registrieren.html  | Login oder neue Registrierung des aktuellen Nutzers                   |
+|aboutus.html                       | Vorstellung des Entwicklerteams                                       |
 
 
 ## Cross-cutting concerns
