@@ -1,6 +1,1 @@
 flask-sqlalchemy
-
-# App ausführen 
-1. Python3 app.py 
-2. Python3 data_to_database.py 
-3. flask run
