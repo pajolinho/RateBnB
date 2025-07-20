@@ -1,20 +1,16 @@
 import random
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, g
 from flask_sqlalchemy import SQLAlchemy
 
-# #prototype
-# bnbs = [
-#     {"id": 1, "title": "Berlin Studio", "city": "Berlin", "price": 120},
-#     {"id": 2, "title": "Warschau Flat", "city": "Warschau", "price": 90}
-# ]
 
 app = Flask(__name__)
-# DAtenbank Konfi
+# Datenbank Konfi
 app.secret_key = "blabla"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
+# Datenbank Tables
 class Bnb(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.String(150), nullable=False)
@@ -24,7 +20,6 @@ class Bnb(db.Model):
     rooms = db.Column(db.Integer, nullable=True)
     price_per_night = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String, nullable=False)
-
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -36,15 +31,23 @@ class User(db.Model):
 #     user_id = db(Integer, nullable=Flase)
 #     bnb_id = db.(Integer, nullable=False)
 
-@app.route("/", methods=["GET"])
+
+@app.route("/", methods=["GET", "POST"])
 def index():
-    user_id = session.get('user_id')
+    user_id = session.get("user_id")
     if user_id:
         user = User.query.get(user_id)
         return render_template("index.html", user=user)
     else:
-        return redirect(url_for('anmelden'))
-    # return render_template("index.html")
+        return redirect(url_for("anmelden"))
+    # user_id = session.get('user_id')
+    # if user_id:
+    #     user = User.query.get(user_id)
+    #     return render_template("index.html", user=user)
+    # else:
+    #     return redirect(url_for("anmelden"))
+    
+    # # return render_template("index.html")
 
 
 # [Q: https://www.youtube.com/watch?v=a1Ykeqj_D_M / und untere Route]
@@ -86,7 +89,7 @@ def anmelden():
 @app.route("/logout")
 def logout():
     session.clear()
-    return redirect(url_for("login"))
+    return redirect(url_for("anmelden"))
 
 @app.route("/aboutus", methods=["GET"])
 def aboutus():

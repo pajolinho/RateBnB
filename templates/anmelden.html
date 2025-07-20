@@ -7,15 +7,26 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <!-- [Q: https://getbootstrap.com/docs/4.1/components/forms/] -->
-<h2>Anmelden</h2>
+
+   <!-- [Q: https://getbootstrap.com/docs/4.1/components/forms/] -->
+   <!-- [Q: https://getbootstrap.com/docs/4.1/components/card/] -->   
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+<div class="card" style="width: 600px;">
+  <div class="card-body">
+    <h1 class="card-title">Willkommen bei RateBNB</h1>
+    <h6 class="card-subtitle mb-2 text-muted">Finde dein nächstes AirBnB</h6>
+    <p class="card-text">Die App mit der Du spielerisch deine nächste Unterkunft finden kannst!</p>
+
 <form method="post">
   <div class="form-group">
-    <label for="usernames">Username: </label>
+    <h3>Melde dich an um Loszuloegen</h3>
+    <label for="usernames">Benutzername: </label>
     <input type="text" name="username" class="form-control" placeholder="Mustermann" required>
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
+    <label for="exampleInputPassword1">Passwort</label>
     <input type="password" name="password" class="form-control" placeholder="Passwort" required>
   </div>
 <p class="text-center mt-3">
@@ -23,4 +34,13 @@
 </p>
   <button type="submit" class="btn btn-success">Anmelden</button>
 </form>
+
+  </div>
+</div>
+
+</div>
+    </div>
+    </div>
+  </div>
+</div>
 </html>
