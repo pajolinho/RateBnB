@@ -5,24 +5,13 @@ nav_order: 1
 ---
 
 {: .label }
-[Jane Dane]
+[Paul Grüßing]
 
 {: .no_toc }
 # Architecture
 
 {: .attention }
-> This page describes how the application is structured and how important parts of the app work. It should give a new-joiner sufficient technical knowledge for contributing to the codebase.
-> 
-> See [this blog post](https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html) for an explanation of the concept and these examples:
->
-> + <https://github.com/rust-lang/rust-analyzer/blob/master/docs/dev/architecture.md>
-> + <https://github.com/Uriopass/Egregoria/blob/master/ARCHITECTURE.md>
-> + <https://github.com/davish/obsidian-full-calendar/blob/main/src/README.md>
-> 
-> For structural and behavioral illustration, you might want to leverage [Mermaid](../ui-components.md), e.g., by charting common [C4](https://c4model.com/) or [UML](https://www.omg.org/spec/UML) diagrams.
-> 
->
-> You may delete this `attention` box.
+> Diese Seite beschreibt den technischen Aufbau der RateBnb Anwendung. Es soll  neuen Entwicklern helfen sich zurecht zufinden
 
 <details open markdown="block">
 {: .text-delta }
@@ -32,13 +21,25 @@ nav_order: 1
 </details>
 
 ## Overview
-
-[Give a high-level overview of what your app does and how it achieves it: similar to the value proposition, but targeted at a fellow developer who wishes to contribute.]
+**RateBnB** ist eine Flask basierte WebApp
++ Benutzerregistrierung & Login sind Session basiert
++ Es werden jeweils zwei unterschiedliche Unterkünfte dem Nutzer vorgeschlagen
++ Favoritenliste der Airbnbs je Benutzer
 
 ## Codemap
+|**Datei**| **Beschreibung**|
+|-------------|-----------------------------------------------------|
+|app.py| Hauptlogik: enthält alle Routen, Datenbankmodelle und den Spielflow|
+|data_to_db.py| Füllt Airbnbs Daten in die Datenbank|
+db.db| Datenbank für Nutzer, Unterkünfte und Favoriten|
+|index.html| Startseite mit Spielanleitung und navigations Möglichkeiten|
+|game.html|zeigt zwei zufällige Unterkunfte zum Preisraten|
+|game_over.html| Bewertet und zeigt das Ergebnis der letzten Spielrunde|
+|favorites.html| zeigt gespeicherte Favoriten des jewiligen Nutzers|
+|anmelden.html & registrieren.html| Login oder neue Registrierung des aktuellen Nutzers|
+|aboutus.html| Vorstellung des Entwicklerteams|
 
-[Describe how your app is structured. Don't aim for completeness, rather describe *just* the most important parts.]
 
 ## Cross-cutting concerns
 
-[Describe anything that is important for a solid understanding of your codebase. Most likely, you want to explain the behavior of (parts of) your application. In this section, you may also link to important [design decisions](../design-decisions.md).]
+Die Anwendung verwendet Session-basierte Authentifizierung, wobei die **user_id** in der Session gespeichert wird, um eingeloggte Nutzer zu identifizieren. Für die Datenpersistenz wird SQLAlchemy eingesetzt, um Python-Klassen mit Datenbanktabellen wie User, Bnb und Favs zu verknüpfen. Die Spiellogik ist direkt in den Flask-Routen implementiert und basiert auf einem Preisvergleich zwischen zwei zufällig ausgewählten Unterkünften. Favoriten werden nutzergebunden gespeichert.
