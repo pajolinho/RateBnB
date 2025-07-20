@@ -68,7 +68,6 @@ def registrieren():
         db.session.commit()
 
         return redirect(url_for("anmelden"))
-        # return redirect(url_for(noch nicht vergeben))
 
     return render_template("registrieren.html")
 
