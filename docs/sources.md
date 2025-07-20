@@ -29,4 +29,31 @@ nav_order: 7
     Q6: understand sqlalchemy
     https://flask-sqlalchemy.readthedocs.io/en/stable/
 
+    Q7: registrien login und logout einrichten mit flask
+    https://www.youtube.com/watch?v=a1Ykeqj_D_M / und untere Route
+
+    Q8: registrieren login und logout
+    https://community.intersystems.com/post/flask-and-flask-login-guide-building-secure-web-applications?
+
+    Q9: Spiel
+    https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/
+
+    Q10: JSON
+    https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/
+
+    Q11: JSON
+    https://www.reddit.com/r/flask/comments/vll4xu/af_how_to_turn_flask_sqlalchemy_query_results/
+    
+    Q12: JSON
+    https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask
+
+    Q13: HTML Boilerplate
+    https://hwrberlin.github.io/fswd/html-css.html
+
+    Q14: Bootstrap Forms
+    https://getbootstrap.com/docs/4.1/components/forms/
+
+    Q15: Bootstrap Card
+    https://getbootstrap.com/docs/4.1/components/card/ 
+
 ## AI Tools

@@ -17,7 +17,7 @@ nav_order: 3
 {: toc }
 </details>
 
-## [team member] - review 1
+## Paul - review 1
 
 ### My observation (Wahrnehmung)
 

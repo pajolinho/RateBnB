@@ -22,13 +22,12 @@ class Bnb (db.Model):
     link = db.Column(db.String, nullable=False)
 
 #[Q6]
-# Noch in Bearbeitung!!!
 class User (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(250), nullable=False)
     password = db.Column(db.String(250), nullable=False)
 
-
+# [Q6]
 class Favs (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
@@ -43,17 +42,8 @@ def index():
         return render_template("index.html", user=user)
     else:
         return redirect(url_for("anmelden"))
-    # user_id = session.get('user_id')
-    # if user_id:
-    #     user = User.query.get(user_id)
-    #     return render_template("index.html", user=user)
-    # else:
-    #     return redirect(url_for("anmelden"))
-    
-    # # return render_template("index.html")
 
-
-# [Q: https://www.youtube.com/watch?v=a1Ykeqj_D_M / und untere Route]
+# [Q7] + [Q8]
 @app.route("/registrieren", methods=["GET", "POST"])
 def registrieren():
     if request.method == "POST":
@@ -71,7 +61,7 @@ def registrieren():
 
     return render_template("registrieren.html")
 
-
+# [Q7] + [Q8]
 @app.route("/anmelden", methods=["GET", "POST"])
 def anmelden():
     if request.method == "POST":
@@ -88,14 +78,17 @@ def anmelden():
 
     return render_template("anmelden.html")
 
+# [Q7] + [Q8]
 @app.route("/logout")
 def logout():
     session.clear()
     return redirect(url_for("anmelden"))
 
+
 @app.route("/aboutus", methods=["GET"])
 def aboutus():
     return render_template("aboutus.html")
+
 
 @app.route("/favoritelist")
 def favoritelist():
@@ -105,8 +98,8 @@ def favoritelist():
     favorite_bnb_ids = [fav.bnb_id for fav in favorites]
     favorite_bnb_listings = Bnb.query.filter(Bnb.id.in_(favorite_bnb_ids)).all()
     return render_template("favorites.html", listings=favorite_bnb_listings)
-# [Q3]
-# [Q: https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/?utm_source=chatgpt.com]
+
+#[Q3] + [Q9]
 @app.route("/game", methods=["GET", "POST"])
 def start():
     if request.method == "POST":
@@ -128,8 +121,6 @@ def start():
 
     if request.method == "GET":
         score = int(request.args.get("score", 0))
-        # bnb_list = Bnb.query.all()
-        # bnb1, bnb2 = random.sample(bnb_list, 2)
         bnb1, bnb2 = random.sample(Bnb.query.all(), 2)
         if bnb1.price_per_night > bnb2.price_per_night:
             expected = "oneExpensive"
@@ -151,9 +142,7 @@ def add_favorite(bnb_id):
     score = request.form.get("score", 0)
     return redirect(url_for("start", score=score))
 
-# [Q: https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/?utm_source=chatgpt.com]
-# [Q: https://www.reddit.com/r/flask/comments/vll4xu/af_how_to_turn_flask_sqlalchemy_query_results/]
-# [Q: https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask]
+# [Q10] [Q11] [Q12]
 @app.route("/api/Favs", methods=["GET"])
 def get_favs():
     favs = Favs.query.all()

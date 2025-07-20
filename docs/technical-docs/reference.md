@@ -7,6 +7,10 @@ nav_order: 3
 {: .label }
 Merdan, Paul
 
+---
+Bilder werden Online leider nicht gelanden aber über die GitHub Seite kann man auch die Bilder sehen sorry...
+---
+
 {: .no_toc }
 # Reference documentation
 
@@ -127,7 +131,7 @@ Merdan, Paul
 
 **Methods:** `GET` 
 
-**Purpose:** Diese Route bietet eine Headless JSON Datei für die gepseicherten Favoriten
+**Purpose:** Diese Route stellt eine Headless JSON Datei für die gepseicherten Favoriten zu verfügung. 
 
 **Start output:**
 
