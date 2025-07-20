@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Favoriten</title>
+</head>
+<body>
+    <h1>Meine Lieblingsunterkünfte</h1>
+
+    {% for fav in favorites %}
+        <div>
+            <h2>{{ fav.bnb.title }}</h2>
+            <p>Ort: {{ fav.bnb.location }}</p>
+            <p>Preis pro Nacht: {{ fav.bnb.price_per_night }} €</p>
+            <a href="{{ fav.bnb.link }}" target="_blank">Zum Airbnb</a>
+            <hr>
+        </div>
+    {% endfor %}
+
+    <a href="{{ url_for('index') }}">Zurück zur Startseite</a>
+</body>
+</html>
