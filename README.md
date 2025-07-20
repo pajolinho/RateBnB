@@ -14,7 +14,7 @@ python -m venv venv
 
 nun muss es aktiviert werden
 ```bash
-source venv\Scripts\activate
+source venv\bin\activate
 ```
 
 installation des requirement.txt
@@ -26,6 +26,9 @@ create the database table
 ```bash
 python app.py
 ```
+
+da die Datenbank noch mit einträgen gefüllt werden muss 
+ctl + c in das Terminal eingeben
 
 datenbank mit Airbnbs füllen
 ```bash
