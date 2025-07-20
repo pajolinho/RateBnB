@@ -28,8 +28,8 @@ Merdan, Paul
 **Purpose:** Hauptseite der Anwendung. Hier kann der Nutzer die Anwendung steuern nachdem er sich angemeldet hat. Nutzer wird mit Nutzernamen angesprochen und kann das Spiel starten und auf die Überunsseite und auf die eigenen Favoriten soweit. 
 
 
-**Sample output:**
-![Bild Index / Seite](/docs/images/bild1.png)
+**Index output:**
+![Bild Index / Seite](images/bild1.png)
 
 ---
 
