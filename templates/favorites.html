@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Favoriten</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
+
     <div class="container">
-        <h1>Meine Favoriten</h1>
-    </div class="well">
-    <h3>Platzhalter unterkunft</h3>
+        <h1>Favoriten</h1>
+
+        {% if listings %}
+        <ul class="list-group">
+            {% for listing in listings %}
+            <li class="list-group-item">
+                <h5>{{ listing.title }}</h5>
+                <p>{{ listing.price_per_night }} €</p>
+                <a href="{{ listing.link }}" target="_blank" class="btn-sm-success">Zum Airbnb</a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted">Du hast noch keine Favoriten gespeichert</p>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}" class="btn-lg-primary">Start</a>
     </div>
+
 </body>
 </html>
