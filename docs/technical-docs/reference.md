@@ -29,7 +29,7 @@ Merdan, Paul
 
 
 **Sample output:**
-![Bild Index / Seite](images/Bild1.png)
+![Bild Index / Seite](/docs/images/bild1.png)
 
 ---
 
