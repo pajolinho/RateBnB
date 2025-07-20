@@ -23,13 +23,13 @@ Merdan, Paul
 
 **Route:** `/`
 
-**Methods:** `GET`
+**Methods:** `GET` `POST`
 
-**Purpose:** Einstieg in die Anwendung, von dort kann der User das Spiel starten oder etwas über das Entwickler Team erfahren
+**Purpose:** Hauptseite der Anwendung. Hier kann der Nutzer die Anwendung steuern nachdem er sich angemeldet hat. Nutzer wird mit Nutzernamen angesprochen und kann das Spiel starten und auf die Überunsseite und auf die eigenen Favoriten soweit. 
+
 
 **Sample output:**
-
-[Show an image, string output, or similar illustration -- or write NONE if function generates no output]
+![Bild Index / Seite](images/Bildschirmfoto 2025-07-20 um 18.43.51.png)
 
 ---
 
