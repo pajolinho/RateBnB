@@ -158,9 +158,9 @@ def add_favorite(bnb_id):
 def get_favs():
     favs = Favs.query.all()
     favs_list = [{
-        "id": favs.id,
-        "bnb_id": favs.bnb_id,
-    }]
+        "id": fav.id,
+        "bnb_id": fav.bnb_id,
+    }for fav in favs]
     return jsonify(favs_list)
 
 
