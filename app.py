@@ -1,5 +1,5 @@
 import random
-from flask import Flask, render_template, request, redirect, url_for, session, g
+from flask import Flask, render_template, request, redirect, url_for, session
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -129,8 +129,7 @@ def start():
             expected = "twoExpensive"
 
         return render_template("game.html", score=score, listing1=bnb1, listing2=bnb2, expected=expected)
-
-
+    
 @app.route("/add_favorite/<int:bnb_id>", methods=["POST"])
 def add_favorite(bnb_id):
     user_id = 1  #placeholder
@@ -143,6 +142,7 @@ def add_favorite(bnb_id):
 
     score = request.form.get("score", 0)
     return redirect(url_for("start", score=score))
+
 
 if __name__ == "__main__":     
     #Datenbank speichern falls im app context ausgeführt wird
