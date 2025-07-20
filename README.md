@@ -40,5 +40,5 @@ kopieren nun die erscheinende Adresse in deinen Browser
 
 Viel Spaß dein zukünftiges Airbnb zu finden 
 
-#GitHub Pages:
+# GitHub Pages:
 Das ist der Link: https://pajolinho.github.io/RateBnB/
