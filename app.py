@@ -97,7 +97,15 @@ def logout():
 def aboutus():
     return render_template("aboutus.html")
 
-
+@app.route("/favoritelist")
+def favoritelist():
+    # user_id = session.get("user_id")
+    # #catch notwendig wenn user nicht angemeldet?
+    # favorites = Favs.query.filter_by(user_id=user_id).all()
+    # favorite_bnb_ids = [fav.bnb_id for fav in favorites]
+    # favorite_bnb_listings = BnB.query.filter(Bnb.id.in_(favorite_bnb_ids)).all()
+    favorite_bnb_listings = [] #placeholder
+    return render_template("favorites.html", listings=favorite_bnb_listings)
 # [Q3]
 @app.route("/game", methods=["GET", "POST"])
 def start():
