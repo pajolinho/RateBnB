@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        
+        </form>
 
 
         <input type="hidden" name="score" value="{{ score }}">
@@ -49,11 +49,23 @@
         
         <input type="hidden" name="id1" value="{{ listing1.id}}">
         <input type="hidden" name="id2" value="{{ listing2.id}}">
-        
-        <!-- <p>
-            <button class="btn btn-lg" type="submit" name="answer" value="oneExpensive">Airbnb1 ist teurer</button>
-            <button class="btn btn-lg" type="submit" name="answer" value="twoExpensive">Airbnb2 ist teurer</button>
-        </p> -->
+    
+
+      <form method="POST" action="{{ url_for('add_favorite', bnb_id=listing1.id) }}">
+        <input type="hidden" name="score" value="{{ score }}">
+        <div class="text-center">
+            <button class="btn btn-sm btn-primary" type="submit">Airbnb1 zu Favoriten</button>
+        </div>
+        </form>
+
+
+
+
+    <form method="POST" action="{{ url_for('add_favorite', bnb_id=listing2.id) }}">
+        <input type="hidden" name="score" value="{{ score }}">
+        <div class="text-center">
+            <button class="btn btn-sm btn-primary" type="submit">Airbnb2 zu Favoriten</button>
+        </div>
     </form>
 </body>
 </html>

@@ -15,7 +15,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class Bnb(db.Model):
+#[Q6]
+class Bnb (db.Model):
     id = db.Column(db.Integer, primary_key=True)
     image_url = db.Column(db.String(150), nullable=False)
     title = db.Column(db.String(600), nullable=False)
@@ -25,16 +26,18 @@ class Bnb(db.Model):
     price_per_night = db.Column(db.Integer, nullable=False)
     link = db.Column(db.String, nullable=False)
 
-
-class User(db.Model):
+#[Q6]
+# Noch in Bearbeitung!!!
+class User (db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(250), unique=True, nullable=False)
-    password = db.Column(db.String(250), nullable=False)
+    firstname = db.Column(db.String(250), nullable=False)
+    name = db.Column(db.String(250), nullable=False)
 
-# class Favs (db.Model):
-#     id = db.Column(db.Integer, primary_key=True)
-#     user_id = db(Integer, nullable=Flase)
-#     bnb_id = db.(Integer, nullable=False)
+
+class Favs (db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    bnb_id = db.Column(db.Integer, db.ForeignKey('bnb.id'), nullable=False)
 
 @app.route("/", methods=["GET"])
 def index():
@@ -126,7 +129,20 @@ def start():
         return render_template("game.html", score=score, listing1=bnb1, listing2=bnb2, expected=expected)
 
 
-if __name__ == "__main__":
+@app.route("/add_favorite/<int:bnb_id>", methods=["POST"])
+def add_favorite(bnb_id):
+    user_id = 1  #placeholder
+    existing = Favs.query.filter_by(user_id=user_id, bnb_id=bnb_id).first()
+    
+    if not existing:
+        fav = Favs(user_id=user_id, bnb_id=bnb_id)
+        db.session.add(fav)
+        db.session.commit()
+
+    score = request.form.get("score", 0)
+    return redirect(url_for("start", score=score))
+
+if __name__ == "__main__":     
     #Datenbank speichern falls im app context ausgeführt wird
     with app.app_context():
         db.create_all()

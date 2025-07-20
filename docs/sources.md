@@ -24,5 +24,9 @@ nav_order: 7
     Q5: in datenbanken nach ID filtern
     https://stackoverflow.com/questions/6750017/how-to-query-database-by-id-using-sqlalchemy
 
+    Q6: https://medium.com/%40kimberlymlove15/sqlalchemy-relationship-status-its-complicated-backref-vs-back-populates-9eaf07335a13
+
+    Q6: understand sqlalchemy
+    https://flask-sqlalchemy.readthedocs.io/en/stable/
 
 ## AI Tools
