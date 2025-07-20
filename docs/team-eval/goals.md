@@ -24,4 +24,4 @@ Außerdem eine hohe Programmiersprache wie Python zu erlenen. Fühle mich bisher
 Auch der Umgang mit einem Code editor wie VS Code war interessant. Bissher habe ich git nur übers terminal bedient und die files mit vim geschrieben.
 
 ## Merdan
-Ein Gefühl dafür bekommen, wie man in einem kleinen Team Full-Stack-Projekte umsetzt. Dabei möchte ich lernen, mit Flask**, Git und GitHub zu arbeiten, da ich diese bisher noch nie genutzt habe.
+Ein Gefühl dafür bekommen, wie man in einem kleinen Team Full-Stack-Projekte umsetzt. Dabei lernen, mit Flask, Git und GitHub zu arbeiten, da ich diese bisher noch nie genutzt habe.

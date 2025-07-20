@@ -8,7 +8,8 @@ nav_order: 3
 Merdan, Paul
 
 ---
-Bilder werden Online leider nicht gelanden aber über die GitHub Seite kann man auch die Bilder sehen sorry...
+Bilder werden Online leider nicht gelanden. Die Bilder kann man aber über GitHub sehen.
+
 ---
 
 {: .no_toc }
