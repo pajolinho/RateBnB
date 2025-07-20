@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-# Datenbank Konfi
 app.secret_key = "blabla"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -93,7 +92,6 @@ def aboutus():
 @app.route("/favoritelist")
 def favoritelist():
     user_id = session.get("user_id")
-    #catch notwendig wenn user nicht angemeldet?
     favorites = Favs.query.filter_by(user_id=user_id).all()
     favorite_bnb_ids = [fav.bnb_id for fav in favorites]
     favorite_bnb_listings = Bnb.query.filter(Bnb.id.in_(favorite_bnb_ids)).all()
@@ -154,7 +152,6 @@ def get_favs():
 
 
 if __name__ == "__main__":     
-    #Datenbank speichern falls im app context ausgeführt wird
     with app.app_context():
         db.create_all()
     app.run(debug=True)

@@ -1,5 +1,5 @@
 from app import db, Bnb, app
-
+# [Q17]
 with app.app_context():
     db.create_all()
     entries = [

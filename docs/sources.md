@@ -11,7 +11,6 @@ nav_order: 7
 
     Q1: Notebook von Alexander Eck: https://hwrberlin.github.io/fswd/html-css.html
     
-
     Q2: https://hwrberlin.github.io/fswd/flask.html
     benutzt für Templates
 
@@ -27,13 +26,13 @@ nav_order: 7
     Q6: https://medium.com/%40kimberlymlove15/sqlalchemy-relationship-status-its-complicated-backref-vs-back-populates-9eaf07335a13
 
     Q6: understand sqlalchemy
-    https://flask-sqlalchemy.readthedocs.io/en/stable/
+    https://flask-sqlalchemy.readthedocs.io/en/stable
 
     Q7: registrien login und logout einrichten mit flask
     https://www.youtube.com/watch?v=a1Ykeqj_D_M / und untere Route
 
     Q8: registrieren login und logout
-    https://community.intersystems.com/post/flask-and-flask-login-guide-building-secure-web-applications?
+    https://community.intersystems.com/post/flask-and-flask-login-guide-building-secure-web-applications
 
     Q9: Spiel
     https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/
@@ -56,4 +55,9 @@ nav_order: 7
     Q15: Bootstrap Card
     https://getbootstrap.com/docs/4.1/components/card/ 
 
-## AI Tools
+    Q16: Bootstrap Lists
+    https://getbootstrap.com/docs/4.1/components/list-group/
+
+    Q17: SQLAlchemy Data for Database
+    https://docs.sqlalchemy.org/en/20/core/dml.html
+
