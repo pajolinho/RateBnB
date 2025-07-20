@@ -29,7 +29,7 @@ Merdan, Paul
 
 
 **Sample output:**
-![Bild Index / Seite](images/Bildschirmfoto 2025-07-20 um 18.43.51.png)
+![Bild Index / Seite](images/Bild1.png)
 
 ---
 
