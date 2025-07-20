@@ -1,5 +1,5 @@
 import random
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -99,6 +99,7 @@ def aboutus():
 
 
 # [Q3]
+# [Q: https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/?utm_source=chatgpt.com]
 @app.route("/game", methods=["GET", "POST"])
 def start():
     if request.method == "POST":
@@ -142,6 +143,18 @@ def add_favorite(bnb_id):
 
     score = request.form.get("score", 0)
     return redirect(url_for("start", score=score))
+
+# [Q: https://www.reddit.com/r/flask/comments/k30ojo/af_querying_a_view_in_sqlite3_from_flask_app/?utm_source=chatgpt.com]
+# [Q: https://www.reddit.com/r/flask/comments/vll4xu/af_how_to_turn_flask_sqlalchemy_query_results/]
+# [Q: https://stackoverflow.com/questions/7102754/jsonify-a-sqlalchemy-result-set-in-flask]
+@app.route("/api/Favs", methods=["GET"])
+def get_favs():
+    favs = Favs.query.all()
+    favs_list = [{
+        "id": favs.id,
+        "bnb_id": favs.bnb_id,
+    }]
+    return jsonify(favs_list)
 
 
 if __name__ == "__main__":     
