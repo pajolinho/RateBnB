@@ -27,3 +27,6 @@ Contributions:
 
 Contributions
 : Datenbankanbindung
+: Funktionen
+: Design
+: Spielprinzip

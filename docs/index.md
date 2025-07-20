@@ -5,7 +5,7 @@ nav_order: 0
 
 # RateBnB
 
-Eine Website die Ihr AirBnB Erlebnis auf die nächste Stufe hebt. Mit RateBnB wird die Unterkunftssuche zu einem Spiel. Können Sie den Highscore knacken?
+Eine Website die Ihr AirBnB Erlebnis auf die nächste Stufe hebt. Mit RateBnB wird die Unterkunftssuche zu einem Spiel.
 
 ## Team members
 
@@ -22,10 +22,10 @@ Matr.-Nr.
 ### Merdan Alkas
 
 About
-: Some info about Joe
+: Student an der HWR im dritten Semester Wirtschaftsinformatik. 
 
 Matr.-Nr.
-: 1234567
+: 77209250807
 
 ## Eidesstattliche Erklärung
 

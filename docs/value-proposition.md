@@ -26,13 +26,13 @@ Zudem ist der Preisvergleich schwer durchschaubar: Service -und Reinigungsgebüh
 RateBnB kombiniert spielerisches Entdecken mit Inspiration:  
 Die Nutzer bekommen zwei Airbnb-Angebote angezeigt und müssen schätzen, welches der beiden günstiger oder teurer ist. So entsteht ein motivierender Spielmechanismus. Unterkünfte, die gefallen, können direkt auf eine Favoritenliste gesetzt werden ganz ohne vorher gezielte Suche.
 
-So werden Nutzer spielerisch motiviert, auf der Jagd nach dem nächsten Highscore eine Unterkunft zu finden. Weil jedes Jahr Amsterdam oder Rom kann jeder.
+So werden Nutzer spielerisch motiviert. Jedes Jahr Amsterdam oder Rom kann jeder.
 
 Die Datenbank wird manuell gepflegt, um eine hohe Qualität zu gewährleisten auch ungewöhnliche Unterkünfte in abgelegenen Regionen werden integriert, dies macht den Reiz aus. 
 
 ## Target user
 
- **Spontanurlauber*innen**, die gerne reisen, aber kein konkretes Ziel vor Augen haben.
+ **Spontanurlauber*innen**, die gerne reisen, aber kein konkretes Ziel vor Augen haben und auch bereit sind an neue außergewöhnliche Orte zu reisen.
 - **Inspirationssuchende** im digitalen Alltag, die gerne neue Orte entdecken auch mal außerhalb der touristischen Hotspots.
 - **Preisbewusste Entdecker*innen**, die spielerisch ein Gefühl für Preise und Unterkünfte bekommen wollen.
 
