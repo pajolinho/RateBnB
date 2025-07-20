@@ -5,7 +5,7 @@ nav_order: 3
 ---
 
 {: .label }
-Paul, Merdan
+[Paul, Merdan]
 
 {: .no_toc }
 # Peer review
@@ -21,12 +21,32 @@ Paul, Merdan
 
 ### My observation (Wahrnehmung)
 
-[A specific observation, regarding know-how, effectiveness, team work or from another relevant area]
+Strukturiert
+Zielstrebig
+Fokussiert
 
 ### Effect on me (Wirkung)
 
-[What positive or negative effect did this observation have on the reviewer?]
+Motivierend!
+Wir konnten uns beide jeweils sehr gut ergänzen. Paul hat meine Schwächen sehr gut aufgefangen, dadurch konnten wir schnell und ergebnissorientert arbeiten.
 
 ### Tip for the future (Wunsch)
 
-[What should be changed or strengthened for the point of view of the reviewer?]
+Früher Anfangen `;)`
+
+
+## Merdan - review 1
+
+### My observation (Wahrnehmung)
+
+Konzentriert
+Zielstrebig
+Sorgfältig
+
+### Effect on me (Wirkung)
+
+Merdan konnte Fehler im Code die mich lange aufgehalten haben gut finden, wenn ich zu verkopft war! Ich hatte viel Spaß mit Merdan in gemeinsamen Bib sessions an diesem Projekt zu arbeiten
+
+### Tip for the future (Wunsch)
+
+Ebenfalls früher Anfangen `;)`
