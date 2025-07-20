@@ -4,7 +4,7 @@ nav_order: 3
 ---
 
 {: .label }
-[Jane Dane]
+[Paul Grüßing]
 
 {: .no_toc }
 # Design decisions
@@ -16,76 +16,104 @@ nav_order: 3
 {: toc }
 </details>
 
-## 01: [Title]
+## 01: Sprache der Applikation
+
+### Meta
+Status
+:  **Decided**
+
+### Problem statement
+Wir standen vor der Überlegung ob wir unsere Applikation auf deutsch oder englisch schreiben sollten.
+
+### Decision
+Wir haben uns für deutsch entschieden, da wir uns auf den europäischen Airbnb Raum fokussiert haben mit unserer App. Außerdem haben wir sie im deutschen Sprachraum entwickelt und möchten daher auch alten Menschen ansprechen die möglicherweise als Minderheit nicht derenglischen Sprache mächtig sind. Diese entscheidung wurde als Team getroffen.
+
+
+### Regarded options
+Englisch oder Deutsch als Sprache 
+
+
+## 02:  SQLite oder SQLAlchemy 
 
 ### Meta
 
 Status
-: **Work in progress** - Decided - Obsolete
-
-Updated
-: DD-MMM-YYYY
+: **Decided**
 
 ### Problem statement
+Für die anwendung benötigen wir eine relationale Datenbank. Daher die frage ob wir  mit SQL arbeiten oder das SQLAlchemy nutzen.
 
 
 ### Decision
-
-[Describe **which** design decision was taken for **what reason** and by **whom**.]
-
+Die Entscheidung ist für SQLALchemy gefallen. Denn damit können wir Datenbankmodelle direkt in Python definieren. Zudem können wir Tabellen als Python Klassen modellieren. Entschieden bei Merdan Alkas
 ### Regarded options
++ SQLAlchemy lesbarer
++ erlernen neuen Knoq-Hows (Datenbanken als Modul bereits bestanden :)
 
-[Describe any possible design decision that will solve the problem. Assess these options, e.g., via a simple pro/con list.]
 
----
-
-## [Example, delete this section] 01: How to access the database - SQL or SQLAlchemy 
+## 03: Highscores als Liste
 
 ### Meta
 
-Status
-: Work in progress - **Decided** - Obsolete
-
-Updated
-: 30-Jun-2024
+: **Decided**
 
 ### Problem statement
-
-Should we perform database CRUD (create, read, update, delete) operations by writing plain SQL or by using SQLAlchemy as object-relational mapper?
-
-Our web application is written in Python with Flask and connects to an SQLite database. To complete the current project, this setup is sufficient.
-
-We intend to scale up the application later on, since we see substantial business value in it.
-
-
-
-Therefore, we will likely:
-Therefore, we will likely:
-Therefore, we will likely:
-
-+ Change the database schema multiple times along the way, and
-+ Switch to a more capable database system at some point.
+Soll der Nutzer seinen Highscore sehen können?
+Wir haben abgewogen zwischen der möglichen Demotivation immer einem Highscore hinterher zu jagen, aber auch der möglichen Motivation die es manchen Nutzern bringt, wenn sie einen Highscore knacken.
 
 ### Decision
+Wir haben uns dazu entschieden den Highscore wegzulassen. Es wurde sich jedoch für ein Kompromiss entschieden. Seinen Highscore kann man nicht einsehen, allerdings den aktuellen Score. So werden die Leute angesprochen die sich von Highscores motiviert fühlen. Sie können ihren Score von Spiel zu Spiel ungefähr verfolgen. Zudem wird keiner demotiviert wenn sein Highscore niedrig ist. Die Entscheidung wurde von Paul Grüßing getroffen
+## Regarded options
 
-We stick with plain SQL.
-
-Our team still has to come to grips with various technologies new to us, like Python and CSS. Adding another element to our stack will slow us down at the moment.
-
-Also, it is likely we will completely re-write the app after MVP validation. This will create the opportunity to revise tech choices in roughly 4-6 months from now.
-*Decision was taken by:* github.com/joe, github.com/jane, github.com/maxi
-
-### Regarded options
-
-We regarded two alternative options:
-
-+ Plain SQL
-+ SQLAlchemy
-
-| Criterion | Plain SQL | SQLAlchemy |
+| Kriterium | Highscores | einfachen Score |
 | --- | --- | --- |
-| **Know-how** | ✔️ We know how to write SQL | ❌ We must learn ORM concept & SQLAlchemy |
-| **Change DB schema** | ❌ SQL scattered across code | ❔ Good: classes, bad: need Alembic on top |
-| **Switch DB engine** | ❌ Different SQL dialect | ✔️ Abstracts away DB engine |
+| **Motivation** | ✔️ positiv wenn sich Spieler angesport fühlen | ❌ sinkende Motivation wenn der Highscore nicht geknackt wird |
+| **Gamification** | ✔️ Spielgefühl wird intensiver | ❌ Spieler konzentrieren sich mehr auf eigentliche Ziel: Airbnb zu finden 
+| **Aufwand** | ❌ Aufwand UI und Usertracking | ✔️ kein Mehraufwand , einfache Umsetzbarkeit |
+
+
+
+## 04: JSON 
+
+### Meta
+
+: **Decided**
+
+### Problem statement
+Nutzung von JSON im project
+
+### Decision
+JSON wird nur verwendet um für die Favoriten Airbnbs 
+### Regarded options
++ So kann der Nutzer seine Favoriten liste migrieren falls die App eingestellt wird
+
+## 05: Datenbank 
+
+### Meta
+
+: **Decided**
+
+### Problem statement
+Wie sollen die Airbnb in die Datenbank eingepflegt werden
+
+### Decision
+Wir haben uns entschieden die Datenbank händisch zu füllen. Dies ermöglicht uns einerseits die volle Kontrolle welche Airbnb dem Nutzer zur Auswahl stehen. So können wir gewährleisten originelle, nicht in Touristen Hotspots bfindliche Unterkünfte vorgeschlagen werden können. Anders als wenn wir mit einem Algorithmus die Airbnbs einpfelgen.Enschieden von Merdan Alkas
+### Regarded options
+Der ausschlag gebende Punkt war die Skalierbarkeit des Projekts. Da es sich um ein kleines Projekt handelt, war für uns die Händische Pfelge ausreichend. 
+
+## 06: Spielprinzip
+
+### Meta
+
+: **Decided**
+
+### Problem statement
+Wie soll das Spiel aufgebaut sein, damit der Spieler nicht überfordert ist, aber trotzdem genug Informationen bekommt um richtig erraten zu können welche Unterkunft teuerer ist.
+
+### Decision
+Wir haben das Spiel nach dem KISS (Keep It Simple and Stupid) designed. Damit das Verständnis leicht ist und der neue Spieler nicht erschlagen wird von den optionen
+### Regarded options
+So haben wir uns dafür entschieden dem Spieler 2 Airbnbs anzuzeigen, bei welchem er das günstigere erraten muss. Er bekommt ein Foto, den Namen des Airbnb und die Anzahl der Zimmer. 
+In Test durchläufen der Entwickler war diese Anzahl der Information am sinnvoll um dem Spieler nicht zu viel zu verraten, also den Schwierigkeitsgrad hoch zu halten aber auch nicht zu wenig Informationen zu geben, was die Frustration erhöhen könnte. Wenn das Spiel zu schwer ist.
 
 ---
