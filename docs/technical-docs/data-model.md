@@ -17,4 +17,41 @@ nav_order: 2
 {: toc }
 </details>
 
-[Visualize and describe the data model(s) of your application. This description should match the actual implementation.]
+## Datenbank
+
+### Bnb Table
+
+Hier werden die listings gespeichert für das Spiel.
+
+| **Feld**        | **Typ**  | **Beschreibung**                          |
+|-----------------|----------|-------------------------------------------|
+| `ID`            | Integer  | Primärschlüssel, automatisch generiert     |
+| `Image_url`     | String   | Pflichtfeld, Link zum Bild                 |
+| `Title`         | String   | Pflichtfeld, Airbnb-Titel                  |
+| `Location`      | String   | Pflichtfeld, Ort                           |
+| `Beds`          | Integer  | Pflichtfeld, Anzahl der Betten im Airbnb   |
+| `Rooms`         | Integer  | Pflichtfeld, Anzahl der Zimmer             |
+| `Price_per_night` | Integer | Pflichtfeld, Preis pro Nacht               |
+| `Link`          | String   | Pflichtfeld, Link zur Airbnb-Seite         |
+
+### User Table
+
+Hier werden die Nutzer angelegt 
+
+| **Feld**   | **Typ**  | **Beschreibung**                        |
+|------------|----------|------------------------------------------|
+| `ID`       | Integer  | Primärschlüssel, automatisch generiert    |
+| `Username` | String   | Pflichtfeld, eindeutiger Nutzername       |
+| `Password` | String   | Pflichtfeld, Passwort zum Anmelden        |
+
+
+### Favs Table
+
+Hier werden die Favoriten gespeichert angelegt 
+
+| **Feld**  | **Typ**  | **Beschreibung**                          |
+|-----------|----------|--------------------------------------------|
+| `ID`      | Integer  | Primärschlüssel, automatisch generiert      |
+| `User_id` | Integer  | Pflichtfeld, Fremdschlüssel, Bezug auf User |
+| `BNB_id`  | Integer  | Pflichtfeld, Fremdschlüssel, Bezug auf BNB  |
+
