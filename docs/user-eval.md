@@ -4,7 +4,7 @@ nav_order: 4
 ---
 
 {: .label }
-Paul, Merdan
+[Paul Grüßing, Merdan Alkas]
 
 {: .no_toc }
 # User evaluation
@@ -16,30 +16,28 @@ Paul, Merdan
 {: toc }
 </details>
 
-## 01: [Title]
+## Nutzerfreundlichkeit
 
 ### Meta
 
 Status
-: **Work in progress** - Done - Obsolete
+: **Done**
 
-Updated
-: DD-MMM-YYYY
 
 ### Goal
 
-[Describe the goal of this evaluation, for example as a research question like: "How long does it take to register a new account and what is the drop-out rate?"]
+Mit der Befrageung möchten wir die Nutzerfreundlichkeit unseres Projekts herausfinden. Der Fokus liegt dabei daruf in Erfahrung zu bringen wie intuitiv der Nutzer durch die App geleitet wird und wie ansprechend sinnvoll er diese als Ergänzung zur herkömmlichen Unterkunftssuche auf Airbnb sieht
 
 ### Method
-
-[Describe how you proceed to achieve your evaluation goal. Be as specific as possible: others should be able to replicate your evaluation by following the description on this section.]
+Die Testnutzer waren unsere Familie.
+Dabei haben wir den Testnutzern nur erzählt was die App bezwecken sollte den Rest überließen wir den Nutzerrn.
 
 ### Results
+Wir haben herausgefunden das die navigation innherhalb der App zu Problemen führte. Außdiesem Grund haben wir features hinzugefügt, sodass auch während des Spiel geschehens es möglich ist zum Startbildschirm zu gelangen oder sich auszuloggen.
+33% kritisierten auch den Spielfluss ansich. Ein beispiel ist hier der neue Route wenn der Nutzer geraten hat. 
+Die Begründung warum dieser etwas holprig ist ist unter Improvements im zweiten Abschnitt zu finden
 
-[Present the main results of your evaluation, for example: "On average, users need 3 min to register. The drop-out rate was 70%. Users that didn't complete provided the following reasons: ..."]
 
-### Implications
-
-[What did you learn from this evaluation and what will you change to improve? Example: "We aim to decrease the drop-out rate by not asking for a birth date. We will re-run this evaluation to measure the impact."]
-
+### Fazit
+Durch diese User-Eval war es uns möglich die Nutzer Freundlichkeit der App zu erhöhen und für die Zukünftigen ein angenehmeres Nutzererlebnis zu bieten
 ---

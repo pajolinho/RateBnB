@@ -61,3 +61,7 @@ nav_order: 7
     Q17: SQLAlchemy Data for Database
     https://docs.sqlalchemy.org/en/20/core/dml.html
 
+    Q18: Vorlage für gitHubPages
+    https://github.com/hwrberlin/fswd-app
+    
+
