@@ -1,5 +1,7 @@
+Dieses Projekt wurde im Rahmen des Kurses **Full-Stack Web Development** an der HWR Berlin erstellt!
+
 # Rate BNB
-Rate bnb ist eine App, die dafür erstellt wurde den Buchungsprozess für eure Ferien Wohnung spielerisch zu gestalten
+Rate bnb ist eine App, die dafür erstellt wurde den Buchungsprozess für eure Ferien Wohnung spielerisch zu gestalten.
 
 # How to get the Code running
 Klonen unseres Repositorys
